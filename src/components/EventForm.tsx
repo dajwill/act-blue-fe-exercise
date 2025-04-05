@@ -60,11 +60,13 @@ const EventForm = ({ tickets }: EventFormProps) => {
                                     <Heading fontWeight="extralight">{formatCurrency(ticket.cost)}</Heading>
                                 </Stack>
                                 <Stack width="100px">
-                                    <NumberInput.Root name={ticket.type} defaultValue="0" color="fg.muted" min={0} onValueChange={({ valueAsNumber }) => updateTickets(ticket.type, valueAsNumber)}>
-                                        <NumberInput.Label display="none">{`Tickets - ${ticket.type}`}</NumberInput.Label>
-                                        <NumberInput.Control borderColor="fg.subtle" bgColor="bg.emphasized" divideColor="fg.subtle" />
-                                        <NumberInput.Input borderRadius={0} borderColor="fg.subtle" />
-                                    </NumberInput.Root>
+                                    <Field.Root>
+                                        <Field.Label display="none">{`Tickets - ${ticket.type}`}</Field.Label>
+                                        <NumberInput.Root name={ticket.type} defaultValue="0" color="fg.muted" min={0} onValueChange={({ valueAsNumber }) => updateTickets(ticket.type, valueAsNumber)}>
+                                            <NumberInput.Control borderColor="fg.subtle" bgColor="bg.emphasized" divideColor="fg.subtle" />
+                                            <NumberInput.Input borderRadius={0} borderColor="fg.subtle" />
+                                        </NumberInput.Root>
+                                    </Field.Root>
                                 </Stack>
                             </Stack>
                         ))}
