@@ -61,6 +61,7 @@ const EventForm = ({ tickets }: EventFormProps) => {
                                 </Stack>
                                 <Stack width="100px">
                                     <NumberInput.Root name={ticket.type} defaultValue="0" color="fg.muted" min={0} onValueChange={({ valueAsNumber }) => updateTickets(ticket.type, valueAsNumber)}>
+                                        <NumberInput.Label display="none">{`Tickets - ${ticket.type}`}</NumberInput.Label>
                                         <NumberInput.Control borderColor="fg.subtle" bgColor="bg.emphasized" divideColor="fg.subtle" />
                                         <NumberInput.Input borderRadius={0} borderColor="fg.subtle" />
                                     </NumberInput.Root>
@@ -75,32 +76,32 @@ const EventForm = ({ tickets }: EventFormProps) => {
                     <Stack>
                         <Stack direction="row">
                             <Field.Root>
-                                <Field.Label></Field.Label>
+                                <Field.Label display="none">First Name</Field.Label>
                                 <Input name="firstName" placeholder="First Name" onChange={updateField} />
                             </Field.Root>
                             <Field.Root>
-                                <Field.Label></Field.Label>
+                                <Field.Label display="none">Last Name</Field.Label>
                                 <Input name="lastName" placeholder="Last Name" onChange={updateField} />
                             </Field.Root>
                         </Stack>
                         <Field.Root>
-                            <Field.Label></Field.Label>
+                            <Field.Label display="none">Address</Field.Label>
                             <Input name="address" placeholder="Address" onChange={updateField} />
                         </Field.Root>
                         <Heading>Payment Details</Heading>
                         <Field.Root>
-                            <Field.Label></Field.Label>
+                            <Field.Label display="none">Credit Card</Field.Label>
                             <InputGroup endElement={<FaRegCreditCard />}>
                                 <Input name="creditCardNumber" placeholder="0000&emsp;0000&emsp;0000&emsp;0000" onChange={updateField} />
                             </InputGroup>
                         </Field.Root>
                         <Stack direction="row">
                             <Field.Root>
-                                <Field.Label></Field.Label>
+                                <Field.Label display="none">Expiration</Field.Label>
                                 <Input name="expiry" placeholder="MM / YY" onChange={updateField} />
                             </Field.Root>
                             <Field.Root>
-                                <Field.Label></Field.Label>
+                                <Field.Label display="none">CVV</Field.Label>
                                 <Input name="cvv" placeholder="CVV" onChange={updateField} />
                             </Field.Root>
                         </Stack>

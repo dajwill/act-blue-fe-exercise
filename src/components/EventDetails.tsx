@@ -7,10 +7,11 @@ const Blurb = chakra('div', {
     }
 })
 
-const EventDetails = ({ imgUrl, description_blurb }: Pick<BandEvent, 'imgUrl' | 'description_blurb'>) => {
+const EventDetails = ({ imgUrl, description_blurb, name }: Pick<BandEvent, 'imgUrl' | 'description_blurb' | 'name'>) => {
     return (
         <Stack dir='column' width={{ base: 'full', md: 'lg' }}>
             <Image
+                alt={`${name} event image`}
                 src={imgUrl}
                 onError={({ currentTarget }) => {
                     currentTarget.onerror = null;
